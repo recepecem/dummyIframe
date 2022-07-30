@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loading...</title>
+</head>
+<body>
+
+
+<tablolar>
+
+    <table id="t1" style="display: none">
+        <tr>
+            <td style="background-color: red;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: green">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+
+
+
+    <table id="t2" style="display: none">
+        <tr>
+            <td style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: red;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="background-color: green;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: blue">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+
+
+    <table id="t3" style="display: none">
+        <tr>
+            <td style="background-color: green;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td  style="background-color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td  style="background-color: red">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+
+
+    <table id="t4"  style="display: none" >
+        <tr>
+            <td style="background-color: blue;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: green;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="background-color: red;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="background-color: yellow">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+</tablolar>
+
+<script>
+
+    var k = 0;
+    var j = 1;
+
+
+    function timer(){
+
+        while ((j !== 100)){
+            setTimeout(function (){
+                    document.getElementById("t1").style.display = "";
+                    document.getElementById("t4").style.display = "none";
+                }
+                , k);
+
+            setTimeout(function (){
+                document.getElementById("t2").style.display = "";
+                document.getElementById("t1").style.display = "none";
+            }, 250+k);
+
+
+            setTimeout(function (){
+                document.getElementById("t3").style.display = "";
+                document.getElementById("t2").style.display = "none";
+            }, 500+k);
+
+            setTimeout(function (){
+                document.getElementById("t4").style.display = "";
+                document.getElementById("t3").style.display = "none";
+            }, 750+k);
+
+
+            k = 1000*j++;
+
+        }
+        setTimeout(function (){ alert("time is up");}, k);
+    }
+
+    timer();
+
+</script>
+
+</body>
+</html>
